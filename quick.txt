@@ -16,3 +16,5 @@ PATCH   /user/{id}      -- Partial Update
 DELETE  /user/{id}      -- Delete user
 ========================== VIEWSET AUTOMETICALLY ENDPOINTS ==========================
 
+
+pip freeze > requirements.txt
