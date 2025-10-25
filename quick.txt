@@ -1,0 +1,18 @@
+========================== ADMIN LOGIN ==========================
+(venv) sotonahmed@Mac-mini BBC % python3 manage.py createsuperuser
+Username (leave blank to use 'sotonahmed'): soton
+Email address: tasmia437@gmail.com   
+Password: 1234
+url: http://127.0.0.1:8000/admin
+========================== ADMIN LOGIN ==========================
+
+
+========================== VIEWSET AUTOMETICALLY ENDPOINTS ==========================
+GET     /user/          -- List all users
+POST    /user/          -- Create new user
+GET     /user/{id}      -- Retrieve single user
+PUT     /user/{id}      -- Update user
+PATCH   /user/{id}      -- Partial Update
+DELETE  /user/{id}      -- Delete user
+========================== VIEWSET AUTOMETICALLY ENDPOINTS ==========================
+
