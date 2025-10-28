@@ -1,17 +1,8 @@
 from rest_framework import serializers
-from .models import Rules, TournamentRule
+from .models import Rule
 
 
-
-
-class RulesSerializer(serializers.ModelSerializer):
+class RuleSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Rules
-        fields = '__all__'
-
-
-class TournamentRuleSerializer(serializers.ModelSerializer):
-    rules = RulesSerializer(many=True, read_only=True)
-    class Meta:
-        model = TournamentRule
-        fields = '__all__'
+        model = Rule
+        fields = '__all__' #['id', 'tournament', 'rule'] it's best practice not '__all__'
