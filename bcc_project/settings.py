@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'rules',
     'team',
     'role',
+    'player',
 ]
 
 MIDDLEWARE = [
