@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'api',
     'tournament',
     'rules',
+    'team',
 ]
 
 MIDDLEWARE = [
