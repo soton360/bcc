@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'team',
     'role',
     'player',
+    'django_filters',
 ]
 
 MIDDLEWARE = [
