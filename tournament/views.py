@@ -1,13 +1,12 @@
-from rest_framework import viewsets, status
-from rest_framework.response import Response
-
 from api.views import CustomModelViewSet
 from .serializers import TournamentSerializer
 from .models import Tournament
+from api.permissions import IsAdminOrReadOnly
 
 class TournamentViewSet(CustomModelViewSet):
     queryset = Tournament.objects.all()
     serializer_class = TournamentSerializer
+    permission_classes = [IsAdminOrReadOnly]
 
     # # ✅ GET (list)
     # def list(self, request, *args, **kwargs):
