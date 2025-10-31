@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'role',
     'player',
     'django_filters',
+    'bcc_member',
 ]
 
 MIDDLEWARE = [
