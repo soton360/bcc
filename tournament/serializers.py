@@ -1,9 +1,7 @@
 from rest_framework import serializers
 from .models import Tournament
-from rules.serializers import RuleSerializer
 
 class TournamentSerializer(serializers.ModelSerializer):
-    rules = RuleSerializer(many=True, read_only=True)
     class Meta:
         model = Tournament
         fields = '__all__'
