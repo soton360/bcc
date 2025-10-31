@@ -1,9 +1,9 @@
-from api.views import CustomModelViewSet
 from .serializers import TournamentSerializer
 from .models import Tournament
 from api.permissions import IsAdminOrReadOnly
+from rest_framework import viewsets
 
-class TournamentViewSet(CustomModelViewSet):
+class TournamentViewSet(viewsets.ModelViewSet):
     queryset = Tournament.objects.all()
     serializer_class = TournamentSerializer
     permission_classes = [IsAdminOrReadOnly]

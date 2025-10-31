@@ -4,7 +4,7 @@ from tournament.models import Tournament
 
     
 class Rule(models.Model):
-    tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE, related_name='rules')
+    tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE)
     rule = models.TextField()
 
     def __str__(self):
