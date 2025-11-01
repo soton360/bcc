@@ -28,14 +28,8 @@ def custom_exception_handler(exc, context):
         else:
             message = str(detail)
         return error_response(message=message, status_code=response.status_code)
-        # return Response({
-        #     "success": False,
-        #     "message": message
-        # }, status=response.status_code)
+        
 
     # Unhandled exception (server errors)
     return error_response(message=str(exc), status_code=status.HTTP_500_INTERNAL_SERVER_ERROR)
-    # return Response({
-    #     "success": False,
-    #     "message": str(exc)
-    # }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+    

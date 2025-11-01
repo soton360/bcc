@@ -15,6 +15,6 @@ def error_response(message="An error occurred", status_code=400):
     Returns a consistent error response for all APIs.
     """
     return Response({
-        "success": False,
         "message": message
     }, status=status_code)
+
