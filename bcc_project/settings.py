@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'django_filters',
     'bcc_member',
     'gallery',
+    'sponsor',
 ]
 
 MIDDLEWARE = [

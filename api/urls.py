@@ -7,6 +7,7 @@ from role.views import RoleViewSet
 from player.views import PlayerViewSet
 from bcc_member.views import BCCMemberViewSet
 from gallery.views import GalleryViewSet
+from sponsor.views import SponsorViewSet
 
 router = DefaultRouter()
 router.register(r'tournaments', TournamentViewSet)
@@ -16,6 +17,7 @@ router.register(r'roles', RoleViewSet)
 router.register(r'players', PlayerViewSet)
 router.register(r'bcc-members', BCCMemberViewSet)
 router.register(r'gallery', GalleryViewSet)
+router.register(r'sponsors', SponsorViewSet)
 
 
 
