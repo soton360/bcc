@@ -48,8 +48,7 @@ INSTALLED_APPS = [
     'bcc_member',
     'gallery',
     'sponsor',
-    'power_house',
-    'contributor'
+    'power_house'
 ]
 
 MIDDLEWARE = [
