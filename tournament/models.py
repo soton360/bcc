@@ -5,9 +5,9 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
 class Tournament(models.Model):
-    name = models.CharField(max_length=100)
-    description = models.TextField(blank=True)
-    registration_process = RichTextUploadingField(blank=True, null=True)
+    name = models.CharField(max_length=100, null=False, blank=False)
+    description = models.TextField(null=True, blank=True)
+    registration_process = RichTextUploadingField(null=True, blank=True)
     category = models.CharField(max_length=50, choices=CATEGORIES_CHOICES, default='cricket')
     is_active = models.BooleanField(default=False)
     start_date = models.DateField()
