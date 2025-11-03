@@ -1,10 +1,13 @@
 from django.db import models
 from api.constants import CATEGORIES_CHOICES
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 # Create your models here.
 class Tournament(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True)
+    registration_process = RichTextUploadingField(blank=True, null=True)
     category = models.CharField(max_length=50, choices=CATEGORIES_CHOICES, default='cricket')
     is_active = models.BooleanField(default=False)
     start_date = models.DateField()

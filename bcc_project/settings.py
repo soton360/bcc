@@ -48,7 +48,9 @@ INSTALLED_APPS = [
     'bcc_member',
     'gallery',
     'sponsor',
-    'power_house'
+    'power_house',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -141,4 +143,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #added by soton
 REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'api.exceptions.custom_exception_handler'
+}
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+
+CKEDITOR_CONFIGS = {
+    'default': {
+        'toolbar': 'full',
+        'height': 300,
+        'width': '100%',
+    },
 }
