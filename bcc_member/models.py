@@ -8,5 +8,5 @@ class BCCMember(models.Model):
     role = models.ForeignKey(Role, on_delete=models.SET_NULL, null=True, blank=True, related_name='bcc_member_roles')
 
     def __str__(self):
-        return f"{self.name} - {self.category}"
+        return f"{self.name} - {self.role.name if self.role else 'No Role'}"
     
