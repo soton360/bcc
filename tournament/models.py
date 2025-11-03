@@ -20,3 +20,17 @@ class Tournament(models.Model):
     def __str__(self):
         return self.name
     
+class TournamentRuleTitle(models.Model):
+    tournament = models.ForeignKey(Tournament, related_name='tournament_rules', on_delete=models.CASCADE)
+    title = models.CharField(max_length=255)
+
+    def __str__(self):
+        return f"{self.tournament.name} - {self.title}"
+
+
+class TournamentRule(models.Model):
+    rule_title = models.ForeignKey(TournamentRuleTitle, related_name='rules', on_delete=models.CASCADE)
+    rule = models.TextField()
+
+    def __str__(self):
+        return f"Rule under {self.rule_title.title}"
