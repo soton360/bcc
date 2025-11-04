@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'power_house',
     'ckeditor',
     'ckeditor_uploader',
+    'blog',
 ]
 
 MIDDLEWARE = [
