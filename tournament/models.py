@@ -9,6 +9,7 @@ class Tournament(models.Model):
     description = models.TextField(null=True, blank=True)
     registration_process = RichTextUploadingField(null=True, blank=True)
     category = models.CharField(max_length=50, choices=CATEGORIES_CHOICES, default='cricket')
+    venue = models.CharField(max_length=100, null=True, blank=True)
     is_active = models.BooleanField(default=False)
     start_date = models.DateField()
     end_date = models.DateField()
