@@ -1,12 +1,13 @@
 from django.db import models
 from tournament.models import Tournament
+from team.models import Team
 # Create your models here.
 class MatchFixture(models.Model):
     tournament = models.ForeignKey(Tournament, on_delete=models.CASCADE, null=True, blank=True)
     title = models.CharField(max_length=200)
     match_date_time = models.DateTimeField()
-    team_a = models.CharField(max_length=100)
-    team_b = models.CharField(max_length=100)
+    team_a = models.ForeignKey(Team, related_name='team_a', on_delete=models.CASCADE)
+    team_b = models.ForeignKey(Team, related_name='team_b', on_delete=models.CASCADE)
     venue = models.CharField(max_length=100)
     result = models.CharField(max_length=255, null=True, blank=True)
     team_a_score = models.CharField(max_length=100, null=True, blank=True)

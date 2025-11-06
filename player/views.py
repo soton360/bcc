@@ -20,6 +20,10 @@ class PlayerViewSet(viewsets.ModelViewSet):
     def check_status(self, request):
         phone = request.query_params.get('phone')
         bkash_id = request.query_params.get('bkash_transaction_id')
+        tournament_id = request.query_params.get('tournament')
+
+        if not tournament_id:
+            raise ValueError("Please provide tournament_id")
 
         if not phone and not bkash_id:
             raise ValueError("Please provide phone or bkash_transaction_id")
@@ -27,6 +31,8 @@ class PlayerViewSet(viewsets.ModelViewSet):
 
         # Filter player by phone or bkash_transaction_id
         players = Player.objects.filter(
+            tournament_id=tournament_id
+        ).filter(
             models.Q(phone=phone) | models.Q(bkash_transaction_id=bkash_id)
         )
 

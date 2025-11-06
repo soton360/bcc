@@ -10,6 +10,7 @@ from sponsor.views import SponsorViewSet
 from power_house.views import PowerHouseViewSet
 from blog.views import BlogPostViewSet
 from match_fixture.views import MatchFixtureViewSet
+from hero.views import HeroSectionViewSet
 
 router = DefaultRouter()
 router.register(r'tournaments', TournamentViewSet)
@@ -22,6 +23,7 @@ router.register(r'sponsors', SponsorViewSet)
 router.register(r'power-houses', PowerHouseViewSet)
 router.register(r'blog-posts', BlogPostViewSet)
 router.register(r'match-fixtures', MatchFixtureViewSet)
+router.register(r'hero-sections', HeroSectionViewSet)
 
 
 
