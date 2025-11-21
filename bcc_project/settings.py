@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -55,6 +56,8 @@ INSTALLED_APPS = [
     'match_fixture',
     'hero'
 ]
+
+# Corsheades handle koiren mone kore
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -162,4 +165,9 @@ CKEDITOR_CONFIGS = {
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+
+# Step-1: Define static,media,statcfile directories
+# Step-2: Collect all static files
+# Step-3: Define static file location from url
 

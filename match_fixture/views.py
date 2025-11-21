@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .models import MatchFixture
-from .serializers import MatchFixtureSerializer
+from .serializers import MatchFixtureSerializer, MatchFixtureFilter
 from api.permissions import IsAdminOrReadOnly
 from django_filters.rest_framework import DjangoFilterBackend
 
@@ -10,4 +10,4 @@ class MatchFixtureViewSet(viewsets.ModelViewSet):
     serializer_class = MatchFixtureSerializer
     permission_classes = [IsAdminOrReadOnly]
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['tournament']
+    filterset_class = MatchFixtureFilter

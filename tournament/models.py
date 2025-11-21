@@ -1,6 +1,7 @@
 from django.db import models
 from api.constants import CATEGORIES_CHOICES
 from ckeditor_uploader.fields import RichTextUploadingField
+from team.models import Team
 
 
 # Create your models here.
@@ -17,6 +18,7 @@ class Tournament(models.Model):
     registration_end = models.DateField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    last_champion = models.ForeignKey(Team, null=True, blank=True, on_delete=models.SET_NULL, related_name='championships_won')
 
     def __str__(self):
         return self.name
