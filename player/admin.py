@@ -5,7 +5,7 @@ from .models import Player
 # admin.site.register(Player)
 @admin.register(Player)
 class PlayerAdmin(admin.ModelAdmin):
-    list_display = ('name', 'phone', 'team')
+    list_display = ('name', 'phone', 'team', "status")
     list_filter = ('team',)
     search_fields = ('name', 'phone')
 
