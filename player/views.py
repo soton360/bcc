@@ -10,11 +10,14 @@ from django.db import models
 
 # Create your views here.
 class PlayerViewSet(viewsets.ModelViewSet):
-    queryset = Player.objects.all()
+    queryset = Player.objects.filter(status="approved").all()
     serializer_class = PlayerSerializer
     permission_classes = [IsAdminOrCreateOnly]
     filter_backends = [DjangoFilterBackend]
     filterset_fields = ['team', 'tournament']
+
+    # def get_queryset(self):
+    #     return Player.objects.filter(status="approved")
 
     @action(detail=False, methods=['get'], url_path='check-status')
     def check_status(self, request):
