@@ -10,7 +10,7 @@ from django.db import models
 
 # Create your views here.
 class PlayerViewSet(viewsets.ModelViewSet):
-    queryset = Player.objects.filter(status="approved").all()
+    queryset = Player.objects.all().order_by('-created_at')
     serializer_class = PlayerSerializer
     permission_classes = [IsAdminOrCreateOnly]
     filter_backends = [DjangoFilterBackend]
