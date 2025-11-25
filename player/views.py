@@ -14,7 +14,7 @@ class PlayerViewSet(viewsets.ModelViewSet):
     serializer_class = PlayerSerializer
     permission_classes = [IsAdminOrCreateOnly]
     filter_backends = [DjangoFilterBackend]
-    filterset_fields = ['team', 'tournament']
+    filterset_fields = ['team', 'tournament', 'status']
 
     # def get_queryset(self):
     #     return Player.objects.filter(status="approved")
